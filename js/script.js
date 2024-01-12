@@ -39,6 +39,7 @@ console.log('targetArticle:',targetArticle);
   for(let link of links){
     link.addEventListener('click', titleClickHandler);
   }
+<<<<<<< HEAD
 
   const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
@@ -73,3 +74,5 @@ clearTitleList();
 }
 
 generateTitleLinks();
+=======
+>>>>>>> f1677960b24aeb372531d340677b43c7b356fb3b
