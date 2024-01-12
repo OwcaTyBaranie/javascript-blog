@@ -65,8 +65,46 @@ body {
   padding: 40px;
   border: 1px solid $color-dark;
   border-radius: 5px;
+  position: relative;
+}
+/* Styl dla artykułów */
+.post {
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
+/* Styl dla aktywnego artykułu */
+.post.active {
+  z-index: 1;
+  opacity: 1;
+}
+
+/* Styl dla linków tytułowych */
+.titles a:hover {
+  color: white; /* Zmiana koloru tekstu na biały przy najechaniu myszką */
+}
+
+/* Styl dla aktywnego linku tytułowego */
+.titles a.active {
+  font-weight: bold; /* Dodanie pogrubienia dla aktywnego linku */
+}
+
+/* Dodatkowy efekt przy najechaniu myszką na linki tytułowe */
+.titles a {
+  transition: color 0.3s ease-in-out;
+}
+
+/* Efekt przy najechaniu myszką na linki tagów */
+.list.list-horizontal li a:hover {
+  background-color: #333;
+  color: white;
+}
+
+/* Efekt przy najechaniu myszką na linki autorów */
+.list.authors li a:hover {
+  text-decoration: underline;
+}
 /* Logo */
 
 .logo {
