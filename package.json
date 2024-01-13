@@ -17,7 +17,8 @@
     "build-dev:sass": "sass --style=expanded --source-map sass:css",
     "watch": "npm-run-all build:* build-dev -p watch:*",
     "watch:browsersync": "browser-sync start --server --files \"css/*.css\" \"*.html\" \"js/*.js\"",
-    "watch:sassprefixer": "onchange sass/*.scss -- npm run build-dev"
+    "watch:sassprefixer": "onchange sass/*.scss -- npm run build-dev",
+    "watch:eslint": "cross-env watch:eslint --watch --changed --clear \"js/*.js\""
   },
   "keywords": [],
   "author": "",
@@ -25,6 +26,7 @@
   "devDependencies": {
     "autoprefixer": "^10.2.4",
     "browser-sync": "^2.23.7",
+    "cross-env": "^7.0.3",
     "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.29.1",
@@ -102,6 +104,7 @@
     "escalade": "^3.1.1",
     "escape-html": "^1.0.3",
     "escape-string-regexp": "^1.0.5",
+    "eslint-watch": "^8.0.0",
     "etag": "^1.8.1",
     "eventemitter3": "^4.0.7",
     "fast-deep-equal": "^3.1.3",
