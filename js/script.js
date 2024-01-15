@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 'use strict';
 function titleClickHandler(event){
   event.preventDefault();
@@ -74,37 +75,37 @@ function generateTitleLinks(){
 generateTitleLinks();
 
 function generateTags(){
-console.log('Tag generated!');
+  console.log('Tag generated!');
   /* find all articles */
-const articles = document.querySelectorAll('.article');
-console.log('articles', articles);
+  const articles = document.querySelectorAll('.article');
+  console.log('articles', articles);
   /* START LOOP: for every article: */
-for (let article of articles) {
-console.log('Loop: for every article has started!');
+  for (let article of articles) {
+    console.log('Loop: for every article has started!');
     /* find tags wrapper */
-const wrapper = article.querySelector(optArticleTagsSelector);
-console.log('wrapper:', wrapper);
+    const wrapper = article.querySelector(optArticleTagsSelector);
+    console.log('wrapper:', wrapper);
     /* make html variable with empty string */
-let html ='';
+    let html ='';
     /* get tags from data-tags attribute */
-let articleTags = article.getAttribute('data-tags');
-console.log('articleTags:', articleTags);
+    let articleTags = article.getAttribute('data-tags');
+    console.log('articleTags:', articleTags);
 
     /* split tags into array */
-const articleTagsArray = articleTags.split(' ');
-console.log('articleTagsArray:', articleTagsArray);
+    const articleTagsArray = articleTags.split(' ');
+    console.log('articleTagsArray:', articleTagsArray);
     /* START LOOP: for each tag */
 
-      /* generate HTML of the link */
+    /* generate HTML of the link */
 
-      /* add generated code to html variable */
+    /* add generated code to html variable */
 
     /* END LOOP: for each tag */
 
     /* insert HTML of all the links into the tags wrapper */
 
   /* END LOOP: for every article: */
-}
+  }
 }
 
 generateTags();

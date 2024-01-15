@@ -1,3 +1,4 @@
+
 @import url("https://fonts.googleapis.com/css?family=Oswald:400,600|Sacramento|Source+Sans+Pro:300&subset=latin-ext");
 
 /* Variables */
@@ -36,7 +37,9 @@ body {
   text-transform: uppercase;
   font-family: $font-header;
   font-weight: 600;
+
   span {
+
     text-transform: none;
     font-weight: 400;
     color: lighten($color-dark, 20%);
@@ -66,18 +69,6 @@ body {
   border: 1px solid $color-dark;
   border-radius: 5px;
   position: relative;
-}
-/* Styl dla artykułów */
-.post {
-  position: relative;
-  opacity: 0;
-  transition: opacity 0,3s ease-in-out;
-}
-
-/* Styl dla aktywnego artykułu */
-.post.active {
-  z-index: 1;
-  opacity: 1;
 }
 
 /* Styl dla linków tytułowych */
@@ -118,12 +109,16 @@ body {
 .subtitle-container {
 display: flex;
 justify-content: center;
+
 .subtitle{
+
   opacity: 1;
   color:#0D0D0D;
   transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
 }
+
 .subtitle:hover {
+
   opacity: 0.8;
   color: white;
 }
@@ -137,7 +132,9 @@ justify-content: center;
   list-style-type: none;
   margin: 0;
   padding: 0;
+
   .active {
+
     font-weight: bold;
   }
 }
@@ -157,10 +154,16 @@ justify-content: center;
 }
 
 /* Post */
-
+/* Styl dla artykułów */
 .post {
+  position: relative;
+  opacity: 0;
+  transition: opacity 0,3s ease-in-out;
   display: none;
-  &.active {
+
+  .active {
+    z-index: 1;
+    opacity: 1;
     display: block;
   }
 }
@@ -170,14 +173,19 @@ justify-content: center;
 }
 
 .post-tags {
+
   display: flex;
-  p {
+
+p {
+
     margin: 0 10px 0 0;
   }
 }
 /*Mediaquery*/
 /* Media query for tablets */
+
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+
   /* Adjust styles for tablets here */
   .container {
     width: 90%;
