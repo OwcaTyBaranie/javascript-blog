@@ -1,20 +1,17 @@
-
-@import url("https://fonts.googleapis.com/css?family=Oswald:400,600|Sacramento|Source+Sans+Pro:300&subset=latin-ext");
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,600|Sacramento|Source+Sans+Pro:300&subset=latin-ext');
 
 /* Variables */
 
 $color-light: #D9CCC5;
 $color-dark: #0D0D0D;
 $color-background: #BF7154;
-$font-logo: "Sacramento", cursive;
-$font-header: "Oswald", sans-serif;
-$font-text: "Source Sans Pro", sans-serif;
+$font-logo: 'Sacramento', cursive;
+$font-header: 'Oswald', sans-serif;
+$font-text: 'Source Sans Pro', sans-serif;
 
 /* Global */
 
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
@@ -37,14 +34,36 @@ body {
   text-transform: uppercase;
   font-family: $font-header;
   font-weight: 600;
-
   span {
-
     text-transform: none;
     font-weight: 400;
     color: lighten($color-dark, 20%);
   }
 }
+/*Subtitle*/
+.subtitle-container {
+  display: flex;
+  justify-content: center;
+
+
+  .subtitle{
+
+
+    opacity: 1;
+    color:#0D0D0D;
+    transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+
+
+  .subtitle:hover {
+
+
+    opacity: 0.8;
+    color: white;
+  }
+
+
+  }
 
 /* Layout */
 
@@ -61,41 +80,14 @@ body {
   flex: 2 0 0;
 }
 
-.sidebar,
-.posts {
+.sidebar, .posts {
   background: $color-light;
   margin-right: 10px;
   padding: 40px;
   border: 1px solid $color-dark;
   border-radius: 5px;
-  position: relative;
 }
 
-/* Styl dla linków tytułowych */
-.titles a:hover {
-  color: white; /* Zmiana koloru tekstu na biały przy najechaniu myszką */
-}
-
-/* Styl dla aktywnego linku tytułowego */
-.titles a.active {
-  font-weight: bold; /* Dodanie pogrubienia dla aktywnego linku */
-}
-
-/* Dodatkowy efekt przy najechaniu myszką na linki tytułowe */
-.titles a {
-  transition: color 0.3s ease-in-out;
-}
-
-/* Efekt przy najechaniu myszką na linki tagów */
-.list.list-horizontal li a:hover {
-  background-color: #333;
-  color: white;
-}
-
-/* Efekt przy najechaniu myszką na linki autorów */
-.list.authors li a:hover {
-  text-decoration: underline;
-}
 /* Logo */
 
 .logo {
@@ -105,26 +97,11 @@ body {
   line-height: 1;
   text-align: center;
 }
-/*Subtitle*/
-.subtitle-container {
-display: flex;
-justify-content: center;
 
-.subtitle{
-
-  opacity: 1;
-  color:#0D0D0D;
-  transition: opacity 0.3s ease-in-out, color 0.3s ease-in-out;
+/* Styl dla linków tytułowych */
+.titles a:hover {
+  color: white; /* Zmiana koloru tekstu na biały przy najechaniu myszką */
 }
-
-.subtitle:hover {
-
-  opacity: 0.8;
-  color: white;
-}
-
-}
-
 
 /* Lists */
 
@@ -132,9 +109,7 @@ justify-content: center;
   list-style-type: none;
   margin: 0;
   padding: 0;
-
   .active {
-
     font-weight: bold;
   }
 }
@@ -154,16 +129,10 @@ justify-content: center;
 }
 
 /* Post */
-/* Styl dla artykułów */
-.post {
-  position: relative;
-  opacity: 0;
-  transition: opacity 0,3s ease-in-out;
-  display: none;
 
-  .active {
-    z-index: 1;
-    opacity: 1;
+.post {
+  display: none;
+  &.active {
     display: block;
   }
 }
@@ -173,39 +142,27 @@ justify-content: center;
 }
 
 .post-tags {
-
   display: flex;
-
-p {
-
+  p {
     margin: 0 10px 0 0;
   }
 }
-/*Mediaquery*/
+
 /* Media query for tablets */
+
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
 
-  /* Adjust styles for tablets here */
   .container {
     width: 90%;
   }
+
 
   .post {
     width: 100%;
     box-sizing: border-box;
     padding: 10px;
   }
-}
-/*Footer*/
-.main-footer {
-  color: white;
-  text-align: center;
-  padding: 0px;
-  margin: 0px;
-  position: relative;
-  bottom: 0;
-  width: 100%;
 }
 
 /* Media query for mobile devices */
@@ -215,9 +172,21 @@ p {
     width: 100%;
   }
 
+
   .post {
     width: 100%;
     box-sizing: border-box;
     padding: 10px;
   }
+}
+
+/*Footer*/
+.main-footer {
+  color: white;
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
