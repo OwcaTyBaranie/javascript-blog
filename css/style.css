@@ -58,19 +58,6 @@ body {
   position: relative;
 }
 
-/* Styl dla artykułów */
-.post {
-  position: relative;
-  opacity: 0;
-  transition: opacity 0, 3s ease-in-out;
-}
-
-/* Styl dla aktywnego artykułu */
-.post.active {
-  z-index: 1;
-  opacity: 1;
-}
-
 /* Styl dla linków tytułowych */
 .titles a:hover {
   color: white; /* Zmiana koloru tekstu na biały przy najechaniu myszką */
@@ -143,9 +130,14 @@ body {
 /* Post */
 .post {
   display: none;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0, 3s ease-in-out;
 }
 .post.active {
   display: block;
+  z-index: 1;
+  opacity: 1;
 }
 
 .post-author {
