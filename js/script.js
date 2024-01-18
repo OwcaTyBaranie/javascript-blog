@@ -73,7 +73,8 @@ function generateTitleLinks(customSelector = ''){
     link.addEventListener('click', titleClickHandler);
   }
 }
-
+generateTitleLinks();
+console.log('generateTitleLinks executed!:');
 
 function generateTags() {
   console.log('Tag generated!:');
