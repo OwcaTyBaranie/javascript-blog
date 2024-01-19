@@ -2,7 +2,8 @@
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
-  optArticleTagsSelector = '.post-tags .list';
+  optArticleTagsSelector = '.post-tags .list',
+  optArticleAuthorSelector = '.post-author';
 
 function titleClickHandler(event){
   event.preventDefault();
@@ -169,3 +170,47 @@ function addClickListenersToTags(){
 }
 
 addClickListenersToTags();
+
+function generateAuthors() {
+  console.log('Author generated!');
+
+  const articles = document.querySelectorAll(optArticleSelector);
+
+  for (let article of articles) {
+    const wrapper = article.querySelector(optArticleAuthorSelector);
+
+    if (wrapper) {
+      let authorLinkHTML = '<a href="#" class="author-link">' + article.getAttribute('data-author') + '</a>';
+      wrapper.innerHTML = authorLinkHTML;
+    }
+  }
+}
+
+
+function authorClickHandler(event) {
+  event.preventDefault();
+  const clickedElement = this;
+  const author = clickedElement.innerText;
+
+  // Clear active class from existing author links
+  const activeAuthorLinks = document.querySelectorAll('.post-author a.active');
+  for (let activeLink of activeAuthorLinks) {
+    activeLink.classList.remove('active');
+  }
+
+  // Add active class to the clicked author link
+  clickedElement.classList.add('active');
+
+  // Generate a filtered list of articles by the clicked author
+  generateTitleLinks('[data-author="' + author + '"]');
+}
+
+function addClickListenersToAuthors() {
+  const authorLinks = document.querySelectorAll('.post-author a');
+  for (let link of authorLinks) {
+    link.addEventListener('click', authorClickHandler);
+  }
+}
+
+generateAuthors();
+addClickListenersToAuthors();
