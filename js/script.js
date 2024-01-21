@@ -218,6 +218,10 @@ function addClickListenersToAuthors() {
 generateAuthors();
 addClickListenersToAuthors();
 
+function calculateTagsParams(tags){
+  return {};
+}
+
 function generateTagsNew() {
   /* [NEW] create a new variable allTags with an empty object */
   let allTags = {};
@@ -267,6 +271,8 @@ function generateTagsNew() {
   const tagList = document.querySelector(optTagsListSelector);
 
   /* [NEW] create a variable for all links HTML code */
+  const tagsParams = calculateTagsParams(allTags);
+  console.log('tagsParams:', tagsParams);
   let allTagsHTML = '';
   /* [NEW] START LOOP: for each tag in allTags: */
   for (let tag in allTags) {
@@ -278,5 +284,5 @@ function generateTagsNew() {
   /* [NEW] add HTML from allTagsHTML to tagList */
   tagList.innerHTML = allTagsHTML;
 }
-
+calculateTagsParams();
 generateTagsNew();

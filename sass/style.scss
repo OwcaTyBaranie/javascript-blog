@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald:400,600|Sacramento|Source+Sans+Pro:300&subset=latin-ext');
-
 /* Variables */
 
 $color-light: #D9CCC5;
@@ -34,6 +32,7 @@ body {
   text-transform: uppercase;
   font-family: $font-header;
   font-weight: 600;
+
   span {
     text-transform: none;
     font-weight: 400;
@@ -109,6 +108,7 @@ body {
   list-style-type: none;
   margin: 0;
   padding: 0;
+
   .active {
     font-weight: bold;
   }
@@ -132,6 +132,7 @@ body {
 
 .post {
   display: none;
+
   &.active {
     display: block;
   }
@@ -143,6 +144,7 @@ body {
 
 .post-tags {
   display: flex;
+
   p {
     margin: 0 10px 0 0;
   }
@@ -150,10 +152,8 @@ body {
 
 /* Media query for tablets */
 
-
 @media screen and (min-width: 768px) and (max-width: 1023px) {
-
-  .container {
+.container {
     width: 90%;
   }
 
