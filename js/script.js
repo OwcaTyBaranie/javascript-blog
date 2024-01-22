@@ -5,8 +5,11 @@ const optArticleSelector = '.post',
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list',
   optArticleAuthorSelector = '.post-author',
+  optCloudClassCount = 5,
+  optCloudClassPrefix = 'tag-size-',
   // eslint-disable-next-line no-unused-vars
   optTagsListSelector = '.tags.list';
+
 
 function titleClickHandler(event){
   event.preventDefault();
@@ -219,9 +222,20 @@ generateAuthors();
 addClickListenersToAuthors();
 
 function calculateTagsParams(tags){
-  return {};
+  const params = {
+    max : 0,
+    min : 999999,
+  };
+  for(let allTags in tags){
+    console.log(allTags + ' is used ' + tags[allTags] + ' times');
+    params.max = Math.max(tags[allTags], params.max);
+    params.min = Math.min(tags[allTags], params.min);
+  }
+  return params;
 }
+function calculateTagClass(count, params){
 
+}
 function generateTagsNew() {
   /* [NEW] create a new variable allTags with an empty object */
   let allTags = {};
@@ -277,7 +291,9 @@ function generateTagsNew() {
   /* [NEW] START LOOP: for each tag in allTags: */
   for (let tag in allTags) {
     /* [NEW] generate code of a link and add it to allTagsHTML */
-    allTagsHTML += '<li><a href="#tag-' + tag + '">' + tag + ' (' + allTags[tag] + ')</a></li> ';
+    const tagClass = calculateTagClass(allTags[tag], tagsParams);
+    const tagLinkHTML = '<li><a href="#tag-' + tag + '" class="' + tagClass + '">' + tag + ' (' + allTags[tag] + ')</a></li>';
+    allTagsHTML += tagLinkHTML;
   }
   /* [NEW] END LOOP: for each tag in allTags: */
 
