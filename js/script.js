@@ -5,7 +5,7 @@ const optArticleSelector = '.post',
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list',
   optArticleAuthorSelector = '.post-author',
-  optCloudClassCount = 5,
+  optCloudClassCount = 4,
   optCloudClassPrefix = 'tag-size-',
   // eslint-disable-next-line no-unused-vars
   optTagsListSelector = '.tags.list';

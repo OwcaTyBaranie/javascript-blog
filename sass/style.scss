@@ -149,7 +149,22 @@ body {
     margin: 0 10px 0 0;
   }
 }
+/* Tags in Cloud */
+.tag-size-1 {
+  font-size: small; /* dostosuj styl według potrzeb */
+}
 
+.tag-size-2 {
+  font-size: medium; /* dostosuj styl według potrzeb */
+}
+
+.tag-size-3 {
+  font-size: large; /* dostosuj styl według potrzeb */
+}
+
+.tag-size-4 {
+  font-size: x-large; /* dostosuj styl według potrzeb */
+}
 /* Media query for tablets */
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
