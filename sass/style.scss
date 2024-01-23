@@ -150,21 +150,39 @@ body {
   }
 }
 /* Tags in Cloud */
+
+ul.tags-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.tags-list li {
+  display: inline-block;
+  margin-right: 10px; /* Dodaj odpowiedni odstęp między tagami */
+}
+
 .tag-size-1 {
   font-size: small; /* dostosuj styl według potrzeb */
+  color:aqua;
 }
 
 .tag-size-2 {
   font-size: medium; /* dostosuj styl według potrzeb */
+  color:rgb(57, 28, 242);
+
 }
 
 .tag-size-3 {
   font-size: large; /* dostosuj styl według potrzeb */
+  color: #F2A71B;
 }
 
 .tag-size-4 {
   font-size: x-large; /* dostosuj styl według potrzeb */
+  color:hsl(0, 89%, 53%)
 }
+
 /* Media query for tablets */
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {

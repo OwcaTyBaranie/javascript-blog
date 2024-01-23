@@ -5,6 +5,7 @@ const optArticleSelector = '.post',
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list',
   optArticleAuthorSelector = '.post-author',
+  optAuthorsListSelector = '.authors.list',
   optCloudClassCount = 4,
   optCloudClassPrefix = 'tag-size-',
   // eslint-disable-next-line no-unused-vars
@@ -178,20 +179,49 @@ function addClickListenersToTags(){
 addClickListenersToTags();
 
 function generateAuthors() {
-  console.log('Author generated!');
-
+  let allAuthors = {};
   const articles = document.querySelectorAll(optArticleSelector);
 
+  // Pętla dla każdego artykułu
   for (let article of articles) {
-    const wrapper = article.querySelector(optArticleAuthorSelector);
+    const author = article.getAttribute('data-author');
+    const title = article.querySelector(optTitleSelector).textContent;
 
-    if (wrapper) {
-      let authorLinkHTML = '<a href="#" class="author-link">' + article.getAttribute('data-author') + '</a>';
-      wrapper.innerHTML = authorLinkHTML;
+    // Dodaj dołączanie linków autorów
+    const authorLinkHTML = '<li><a href="#author-' + author + '">' + author + '</a></li>';
+
+    // Dodaj dołączanie linków do listy autorów
+    if (!allAuthors.hasOwnProperty(author)) {
+      allAuthors[author] = 1;
+    } else {
+      allAuthors[author]++;
     }
-  }
-}
 
+    // Dodaj wyświetlanie linku autora
+    const authorWrapper = article.querySelector(optArticleAuthorSelector);
+    authorWrapper.innerHTML = authorLinkHTML;
+
+    // Usuń numer z tytułu artykułu
+    const titleWrapper = article.querySelector(optTitleSelector);
+    titleWrapper.textContent = title;
+  }
+
+  // Znajdź listę autorów w prawej kolumnie
+  const authorsList = document.querySelector(optAuthorsListSelector);
+
+  // Utwórz zmienną dla HTML kodu linków autorów
+  let allAuthorsHTML = '';
+
+  // Rozpocznij pętlę dla każdego autora w allAuthors
+  for (let author in allAuthors) {
+    // Wygeneruj kod linka autora
+    const authorLinkHTML = '<li><a href="#author-' + author + '">' + author + '</a></li>';
+    allAuthorsHTML += authorLinkHTML;
+  }
+
+  // Dodaj HTML z allAuthorsHTML do listy autorów
+  authorsList.innerHTML = allAuthorsHTML;
+}
 
 function authorClickHandler(event) {
   event.preventDefault();
